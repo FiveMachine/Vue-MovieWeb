@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header :title="title"/>
+    <MoviesList/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
+import MoviesList from "./components/MoviesList.vue";
 
 export default {
-  name: 'app',
+  name: "app",
+  data() {
+    return {
+      title: "Vue Movie Library",
+      isTrue: true,
+      status: "Ready"
+    };
+  },
   components: {
-    HelloWorld
+    Header,
+    MoviesList
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #fff;
+}
+
+li {
+  list-style: none;
 }
 </style>
